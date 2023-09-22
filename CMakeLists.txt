@@ -99,14 +99,12 @@ endif()
 # Created with `ls -1 third_party/kaldi/src/{base,util,matrix,fstext,lm,lat}/*.cc | grep -v test`
 set(cuda_decoder_sources
   third_party/kaldi/src/base/io-funcs.cc
-
-  third_party/kaldi/src/base/io-funcs.cc
   third_party/kaldi/src/base/kaldi-error.cc
   third_party/kaldi/src/base/kaldi-math.cc
   third_party/kaldi/src/base/kaldi-utils.cc
   third_party/kaldi/src/base/timer.cc
   third_party/kaldi/src/fstext/context-fst.cc
-  third_party/third_party/kaldi/src/fstext/grammar-context-fst.cc
+  third_party/kaldi/src/fstext/grammar-context-fst.cc
   third_party/kaldi/src/fstext/kaldi-fst-io.cc
   third_party/kaldi/src/fstext/push-special.cc
   third_party/kaldi/src/lat/compose-lattice-pruned.cc
