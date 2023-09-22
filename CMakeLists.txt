@@ -99,26 +99,28 @@ endif()
 # Created with `ls -1 third_party/kaldi/src/{base,util,matrix,fstext,lm,lat}/*.cc | grep -v test`
 set(cuda_decoder_sources
   third_party/kaldi/src/base/io-funcs.cc
+
+  third_party/kaldi/src/base/io-funcs.cc
   third_party/kaldi/src/base/kaldi-error.cc
   third_party/kaldi/src/base/kaldi-math.cc
   third_party/kaldi/src/base/kaldi-utils.cc
   third_party/kaldi/src/base/timer.cc
   third_party/kaldi/src/fstext/context-fst.cc
-  third_party/kaldi/src/fstext/grammar-context-fst.cc
+  third_party/third_party/kaldi/src/fstext/grammar-context-fst.cc
   third_party/kaldi/src/fstext/kaldi-fst-io.cc
   third_party/kaldi/src/fstext/push-special.cc
   third_party/kaldi/src/lat/compose-lattice-pruned.cc
   third_party/kaldi/src/lat/confidence.cc
   third_party/kaldi/src/lat/determinize-lattice-pruned.cc
   third_party/kaldi/src/lat/kaldi-lattice.cc
+  third_party/kaldi/src/lat/lattice-functions-transition-model.cc
   third_party/kaldi/src/lat/lattice-functions.cc
-  # third_party/kaldi/src/lat/lattice-functions-transition-model.cc
   third_party/kaldi/src/lat/minimize-lattice.cc
   third_party/kaldi/src/lat/phone-align-lattice.cc
   third_party/kaldi/src/lat/push-lattice.cc
   third_party/kaldi/src/lat/sausages.cc
-  third_party/kaldi/src/lat/word-align-lattice.cc
   third_party/kaldi/src/lat/word-align-lattice-lexicon.cc
+  third_party/kaldi/src/lat/word-align-lattice.cc
   third_party/kaldi/src/lm/arpa-file-parser.cc
   third_party/kaldi/src/lm/arpa-lm-compiler.cc
   third_party/kaldi/src/lm/const-arpa-lm.cc
@@ -133,8 +135,8 @@ set(cuda_decoder_sources
   third_party/kaldi/src/matrix/optimization.cc
   third_party/kaldi/src/matrix/packed-matrix.cc
   third_party/kaldi/src/matrix/qr.cc
-  third_party/kaldi/src/matrix/sparse-matrix.cc
   third_party/kaldi/src/matrix/sp-matrix.cc
+  third_party/kaldi/src/matrix/sparse-matrix.cc
   third_party/kaldi/src/matrix/srfft.cc
   third_party/kaldi/src/matrix/tp-matrix.cc
   third_party/kaldi/src/util/kaldi-holder.cc
@@ -146,21 +148,6 @@ set(cuda_decoder_sources
   third_party/kaldi/src/util/simple-io-funcs.cc
   third_party/kaldi/src/util/simple-options.cc
   third_party/kaldi/src/util/text-utils.cc
-  third_party/kaldi/src/decoder/grammar-fst.cc
-  third_party/kaldi/src/decoder/lattice-faster-decoder.cc
-  third_party/kaldi/src/decoder/lattice-faster-online-decoder.cc
-  third_party/kaldi/src/decoder/lattice-incremental-decoder.cc
-  third_party/kaldi/src/decoder/lattice-incremental-online-decoder.cc
-  third_party/kaldi/src/cudadecoder/batched-static-nnet3-kernels.cu
-  third_party/kaldi/src/cudadecoder/cuda-decoder.cc
-  third_party/kaldi/src/cudadecoder/cuda-decoder-kernels.cu
-  third_party/kaldi/src/cudadecoder/lattice-postprocessor.cc
-  third_party/kaldi/src/cudadecoder/cuda-fst.cc
-  third_party/kaldi/src/cudadecoder/thread-pool-cia.cc
-  third_party/kaldi/src/online2/online-endpoint.cc
-
-  src/riva/asrlib/decoder/ctc_transition_information.cc
-  src/riva/asrlib/decoder/batched-mapped-decoder-cuda.cc
   )
 
 add_library(riva_asrlib_wfst_decoder
